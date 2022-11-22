@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Animation</title>
+	<link rel="stylesheet" type="text/css" href="seo.css">
+	<link rel="icon" href="e.png">
+</head>
+<body>
+	<header>
+		<style>
+@import url('https://fonts.googleapis.com/css2?family=Shalimar&display=swap');
+</style>
+			<div class="logo">
+        		<img src="e.png" alt="">
+        		<h3>Movie</h3>
+    		</div>
+			<ul>
+				<li><a target="_blank" href="home.html">Home</a></li>
+				<li><a target="_blank" href="animetion.html">Animation list</a></li>
+				<li><a target="_blank" href="anime.html">Anime</a></li>
+				<li><a target="_blank" href="contact.html">Contact</a></li>
+				<li><a target="_blank" href="login.html">Login</a></li>
+			</ul>
+		</header>
+		<section>
+		<img src="stars.png" id="stars">
+		<img src="moon.png" id="moon">
+		<img src="mountains_behind.png" id="mountains_behind">
+		<h2 id="text">Movie time...<span></span></h2>
+		<a href="#" id="btn">Start</a>
+		<img src="mountains_front.png" id="mountains_front">
+	</section>
+	
+
+<script src="anime.min.js"></script>
+<script>
+	var animation=anime.timeline({
+		autoplay: false
+	});
+
+	animation
+	.add({
+		targets:'#btn',
+		top: '1500px',
+		duration: 500,
+		easing: 'easeInOutSine'
+	})
+
+
+	.add({
+		targets:'#stars',
+		top: '0px',
+		duration: 1000,
+		easing: 'easeInOutSine'
+	})
+
+
+	.add({
+		targets:'#mountains_behind',
+		bottom: '0px',
+		duration: 1000,
+		easing: 'easeInOutSine'
+	})
+
+	.add({
+		targets:'#moon',
+		top: '0px',
+		duration: 1000,
+		easing: 'easeInOutSine'
+	})
+
+
+	.add({
+		targets:'#mountains_front',
+		bottom: '0px',
+		duration: 1000,
+		easing: 'easeInOutSine'
+	})
+
+
+	.add({
+		targets:'#text',
+		duration: 1000,
+		marginRight: 0,
+		easing: 'easeInOutSine'
+	})
+	document.querySelector('#btn').onclick = animation.play;
+</script>
+</body>
+</html>
